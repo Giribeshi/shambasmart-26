@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "name": "agrimind-api",
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "JWT_SECRET": "agrimind-jwt-secret-key-2024"
+  },
+  "functions": {
+    "server.js": {
+      "maxDuration": 10
+    }
+  }
+}
